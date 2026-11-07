@@ -25,7 +25,7 @@ const ALL=[{"f": "2023-11/图片_20261028010853_62_338.jpg", "d": "2023-11", "t"
 const S=document.getElementById('stage'),$=id=>document.getElementById(id);
 let idx=0,timer=null;
 function place(d){
-  const TH=Math.min(innerWidth,innerHeight)*0.22;     // 「早」字统一缩放到这个大小
+  const TH=Math.min(innerWidth,innerHeight)*0.14;     // 「早」字统一缩放到这个大小
   const e=document.createElement('div');e.className='im';
   const s=TH/Math.max(d.a[2],d.a[3],1);
   e.style.width=d.cw+'px';e.style.height=d.ch+'px';
@@ -41,7 +41,7 @@ function show(){
   const d=D[idx];els[idx].style.visibility='visible';cur=idx;
   $('cap').textContent=`${d.d} ${d.t||''}  ${d.txt}`;$('sl').value=idx;$('cnt').textContent=(idx+1)+' / '+D.length;
 }
-function start(){timer=setInterval(()=>{idx=(idx+1)%D.length;show()},130);$('play').textContent='暂停'}
+function start(){timer=setInterval(()=>{idx=(idx+1)%D.length;show()},260);$('play').textContent='暂停'}
 function stop(){clearInterval(timer);timer=null;$('play').textContent='播放'}
 $('sl').max=D.length-1;
 $('sl').oninput=e=>{idx=+e.target.value;show();if(timer)stop()};
