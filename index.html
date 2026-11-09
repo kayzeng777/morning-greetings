@@ -41,7 +41,7 @@ function show(){
   const d=D[idx];els[idx].style.visibility='visible';cur=idx;
   $('cap').textContent=`${d.d} ${d.t||''}  ${d.txt}`;$('sl').value=idx;$('cnt').textContent=(idx+1)+' / '+D.length;
 }
-function start(){timer=setInterval(()=>{idx=(idx+1)%D.length;show()},260);$('play').textContent='暂停'}
+function start(){timer=setInterval(()=>{idx=(idx+1)%D.length;show()},450);$('play').textContent='暂停'}
 function stop(){clearInterval(timer);timer=null;$('play').textContent='播放'}
 $('sl').max=D.length-1;
 $('sl').oninput=e=>{idx=+e.target.value;show();if(timer)stop()};
